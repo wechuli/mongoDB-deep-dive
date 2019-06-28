@@ -55,3 +55,10 @@ BSON - Binary JSON - mongo uses BSON for storing.BSON is more efficient than JSO
 
 - deleteOne(filter,options)
 - deleteMany(filter,options)
+
+
+find() gives us a cursor Object which is an object with a lot of metadata that enables us to cycle through the result. It does not return all the results from the db
+
+- db.collections.toArray() - 
+
+### Projection
