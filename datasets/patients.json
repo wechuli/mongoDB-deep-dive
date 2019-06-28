@@ -1,0 +1,23 @@
+[
+  {
+    "firstname": "Paul",
+    "lastName": "Wechuli",
+    "age": 26,
+    "history": [
+      { "disease": "cold", "treatment": "tangawizi" },
+      { "disease": "headache", "treatment": "panadol" }
+    ]
+  },
+  {
+    "firstname": "June",
+    "lastName": "Mu",
+    "age": 23,
+    "history": [{ "disease": "cold", "treatment": "paracetamol" }]
+  },
+  {
+    "firstname": "Nicole",
+    "lastName": "Nafula",
+    "age": 38,
+    "history": [{ "disease": "headache", "treatment": "panadol" }]
+  }
+]
