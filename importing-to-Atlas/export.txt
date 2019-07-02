@@ -1,0 +1,9 @@
+
+
+mongoimport --db devDB 
+
+mongoimport --uri "mongodb+srv://twiga:twigaadminpassword2020@cluster0-swacw.azure.mongodb.net/devDB??ssl=true&replicaSet=myAtlasRS&authSource=admin" --collection locations --file locs.json --jsonArray
+
+cluster0-shard-00-00-swacw.azure.mongodb.net:27017
+
+mongoimport --host cluster0-shard-00-00-swacw.azure.mongodb.net:27017 --db devDB --type json --collection locations --file locs.json --jsonArray --authenticationDatabase admin --ssl --username twigaAdmin --password twigaadminpassword2020
