@@ -35,3 +35,14 @@ db.cities.insertOne({name:"Nairobi",population:3000000})
 db.cities.updateOne({name:"Nairobi"},{$set:{coordinates:36}})
 
 db.citizens.insertMany([{name:"Paul",city:ObjectId("5d1b46a2b17b8b7474a46c7a")},{name:"June",city:ObjectId("5d1b46a2b17b8b7474a46c7a")},{name:"Francis",city:ObjectId("5d1b46a2b17b8b7474a46c7a")}])
+
+## Many to Many
+db.products.insertOne({title:"A book",price:12.99})
+db.customers.insertOne({name:"Paul Wechuli",age:26})
+db.orders.insertOne({productId:ObjectId("5d1c958162af087440bab764"),customerId:ObjectId("5d1c95b262af087440bab765")})
+
+
+db.customers.updateOne({},{$set:{orders:[{productId:ObjectId("5d1355a6a112f4d2dbcd572d"),quantity:2},{productId:ObjectId("5d135679a112f4d2dbcd572f"),quantity:200}]}})
+
+db.books.insertOne({name:"A book",authors:[{name:"Paul",age:26},{name:"Jess",age:24}]})
+db.authors.insertMany([{name:"Paul",age:26,address:123},{name:"Jess",age:24,address:555}])
