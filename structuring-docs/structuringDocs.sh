@@ -30,11 +30,19 @@ db.questionThreads.insertOne({creator:"Paul",question:"How does it all works",an
 
 db.questionThreads.find().pretty()
 
+
 db.cities.insertOne({name:"Nairobi",population:3000000})
+db.cities.insertOne({name:"Naivasha",population:200000,coordinates:{lat:-1.3855,lon:36.8565}})
 
-db.cities.updateOne({name:"Nairobi"},{$set:{coordinates:36}})
+db.cities.updateOne({name:"Nairobi"},{$set:{coordinates:{lat:-1.000,lon:37.8565}}})
 
-db.citizens.insertMany([{name:"Paul",city:ObjectId("5d1b46a2b17b8b7474a46c7a")},{name:"June",city:ObjectId("5d1b46a2b17b8b7474a46c7a")},{name:"Francis",city:ObjectId("5d1b46a2b17b8b7474a46c7a")}])
+db.citizens.insertMany([{name:"Paul",city:ObjectId("5d2185b0c062f7de40dddb92")},{name:"June",city:ObjectId("5d2185b0c062f7de40dddb92")},{name:"Francis",city:ObjectId("5d2185b0c062f7de40dddb92")}])
+
+
+ObjectId("5d218625c062f7de40dddb93")
+
+
+db.citizens.insertMany([{name:"Mercy",city:ObjectId("5d218625c062f7de40dddb93")},{name:"Caroline",city:ObjectId("5d218625c062f7de40dddb93")}])
 
 ## Many to Many
 db.products.insertOne({title:"A book",price:12.99})
@@ -46,3 +54,9 @@ db.customers.updateOne({},{$set:{orders:[{productId:ObjectId("5d1355a6a112f4d2db
 
 db.books.insertOne({name:"A book",authors:[{name:"Paul",age:26},{name:"Jess",age:24}]})
 db.authors.insertMany([{name:"Paul",age:26,address:123},{name:"Jess",age:24,address:555}])
+
+## Using Lookup
+
+db.citizens.aggregate([
+    {$lookup:{from:"cities",localField:"city",foreignField:"_id",as:"cityDetails"}}
+])

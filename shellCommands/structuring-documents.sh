@@ -7,7 +7,7 @@ db.numbers.insertOne({a:1})
 
 db.stats
 
-db.{databaseName}.dropDatabase()
+db.dropDatabase()
 db.{collectionName}.drop()
 
 # Store numbers using int32 instead of the default 64 bits

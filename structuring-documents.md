@@ -59,3 +59,16 @@ Questions?
 - Split data across collections
 - Great for related but shared data as well as for data which is used in relations and standalone
 - Allows you to overcome nesting and size limits(by creating new documents)
+
+## Understanding Schema Validation
+
+You can define schema validation in the MongoDB.
+
+- **Validation Level**
+  - Which documents get validated
+    - strict - All inserts and updates
+    - moderate - All inserts and uodates to correct documents
+- **Validation Action**
+  - What happens if validation fails
+    - error - Throw error and deny insert/update
+    - warn - Log warning but proceed
