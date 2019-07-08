@@ -72,3 +72,34 @@ You can define schema validation in the MongoDB.
   - What happens if validation fails
     - error - Throw error and deny insert/update
     - warn - Log warning but proceed
+
+## Editing the validations
+
+`db.runCommand({collMod:"posts",{validatorLogic}})`
+
+## Conclusion
+
+### Data Modelling and Structure - Things to Consider
+
+- In which format will you fetch your Data?
+- How often will you fetch and change your Data?
+- How mush data will you save(and how big is it)?
+- How is your data related?
+- Will duplicates hurt you(=> many updates)?
+- Will you hit data/storage limits?
+
+### Modelling Schemas
+
+- Schemas should be modelled based on your application needs
+- Important factors are: Read and write frequency, relations, amount(and size) of data
+
+### Modelling Relations
+
+- Two options: Embedded documents or references
+- Use embedded documents if you got one-to-one or one-to-many relationships and no app or data size reason to split
+- Use references if data amount/size or application needs require it or for many-to-many relations
+- Exceptions are always possible => Keep your app requirements in mind!
+
+### Schema Validation
+- You can define rules to validate inserts and update before writing to the database
+- Choose your validation level and action based on your application requirements
