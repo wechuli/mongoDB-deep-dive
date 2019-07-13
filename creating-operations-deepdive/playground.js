@@ -59,18 +59,19 @@ db.hobbies.insertMany([{
 })
 
 // 'writeConcern' - Journal("Todos")
-{
-  w: 1,
-  j: undefined
-} {
-  w: 1,
-  j: true
-} //enable journal
-{
-  w: 1,
-  wtimeout: 200,
-  j: true
-}
+// {
+//   w: 1,
+//   j: undefined
+// } ;
+// {
+//   w: 1,
+//   j: true
+// } //enable journal
+// {
+//   w: 1,
+//   wtimeout: 200,
+//   j: true
+// }
 
 //'writeConcern' practise - journal set to false
 
