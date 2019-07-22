@@ -65,9 +65,16 @@ Element Operators
 - \$type - Selects documents if a field is of the specified type.
 
 Evaluation Operators
-- $expr - Allows use of aggregation expressions within the query language
-- $jsonSchema - Validate documents against the given JSON Schema
-- $mod - Perdorms a modulo operation on the value of a field and selects documents with a specified result
-- $regex - Selects documents where values match a specified regular expression
-- $text - Performs text search
-- $where - Matched documents that satisfy a JavaScript expression
+
+- \$expr - Allows use of aggregation expressions within the query language
+- \$jsonSchema - Validate documents against the given JSON Schema
+- \$mod - Perdorms a modulo operation on the value of a field and selects documents with a specified result
+- \$regex - Selects documents where values match a specified regular expression
+- \$text - Performs text search
+- \$where - Matched documents that satisfy a JavaScript expression
+
+## Array
+
+- \$all - Matches arrays that contain all elements specified in the query
+- $elemMatch - Selects documents if element in the array field matches all the specified $elemMatch
+- \$size - Selects documents if the array field is a specific value
