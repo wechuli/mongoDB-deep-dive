@@ -15,3 +15,6 @@ db.contacts.explain("executionStats").find({ "dob.age": { $gt: 60 } });
 db.contacts.createIndex({ "dob.age": 1 });
 //If we repeat the query - db.contacts.find({ "dob.age": { $gt: 60 } }).count();
 //MongoDB will get the documents far much faster than previously since it is now using an Index
+
+//dropping an index
+db.contacts.dropIndex({ "dob.age": 1 });
