@@ -31,7 +31,6 @@ MongoDB is now able to quickly find a fitting document when you filter for its a
 
 Additionally, sorting(via sort(...)) will also be sped up because you already have a sorted list. Of course that is only true when sorting for the age.
 
-
 ## Index Restrictions
 
 If you have a query that returns a majority of your documents, the index might actually be slower as you have an extra step of going through the index first before querying the collection. If your query returns only a few docs, an index will help you with speed here.
@@ -41,11 +40,30 @@ If you have a query that returns a majority of your documents, the index might a
 Idexes can be used for sorting. When sorting documents and have a lot of docs in the query, instead of storing the operation and results in memory, MongoDB could us the already sorted index to return the documents.
 
 ## Default Indexes
-- _id is the default index
+
+- \_id is the default index
 
 ### Unique Indexes
+
 Unique indexes can help you ensure data consistency for fields that you need values to be unique.
 
 ## Understanding Partial Filters
 
 You can add a partial index for values you are going to regurlaly look at.
+
+## Query Diagnosis and Query Planning
+
+- `explain()`
+  - `queryPlanner`
+    - Show Summary for Executed Query + Winning Plan
+  - `executionStats`
+    - Show Detailed Summary for Executed Query + Winning Plan + Possibly Rejected Plans
+  - `allPlansExecution`
+    - Show detailed summary for Executed Query + Winning Plan + Winning Plan Decision Process
+
+## Efficient Queries and Covered Queries
+
+- Milliseconds Process Time - IXSCAN typically beats COLLSCAN
+- # of Keys (in Index) Examined
+- # of Documents Examined
+- # of Documents Returned
